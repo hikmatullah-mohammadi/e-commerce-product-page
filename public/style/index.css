@@ -3,5 +3,59 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-size: 16px;
+}
+
+button {
+  border: none;
+  background-color: inherit;
+}
+
+body {
+  padding: 0 10%;
+}
+
+body header {
+  margin: 40px 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 20% 60% 20%;
+      grid-template-columns: 20% 60% 20%;
+}
+
+body header nav ul li {
+  display: inline;
+}
+
+body header nav ul li .nav-link {
+  display: inline-block;
+  color: #b6bcc8;
+  text-decoration: none;
+  margin: 0 2%;
+  padding: 5px 0;
+}
+
+body header .user {
+  margin-top: -10px;
+  place-self: end;
+  width: 100%;
+}
+
+body header .user .btn-cart {
+  margin-top: 15px;
+  margin-left: 50%;
+}
+
+body header .user .avatar {
+  float: right;
+  width: 45px;
+}
+
+body header hr {
+  margin-top: 50px;
+  margin-bottom: 40px;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
 }
 /*# sourceMappingURL=index.css.map */

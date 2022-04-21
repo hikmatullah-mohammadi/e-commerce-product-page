@@ -1,8 +1,12 @@
+import Header from './components/Header'
+import Main from'./components/Main'
+
 const MyApp = () => {
   return (
-    <main>
-      I am an E-commerce web site.
-    </main>
+    <>
+      <Header />
+      {/* <Main /> */}
+    </>
   )
 }
 
