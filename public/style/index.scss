@@ -23,6 +23,10 @@ button {
   border: none;
   background-color: inherit;
 }
+.selected {
+  opacity: 0.5;
+}
+
 body {
   padding: 0 10%;
   header {
@@ -60,6 +64,104 @@ body {
       margin-top: 50px;
       margin-bottom: 40px;
       grid-column: 1/4;
+    }
+  }
+  main {
+    margin: 0 10%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-column-gap: 10%;
+    .images {
+      grid-column: 1/2;
+      .display {
+        margin-bottom: 32px;
+        img {
+          width: 100%;
+          border-radius: 15px;
+        }
+      }
+      .thumbnails {
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        li {
+          width: 22%;
+          img {
+            width: 100%;
+            border-radius: 10px;
+            &:hover {
+              opacity: 0.5;
+            }
+          }
+        }
+      }
+    }
+    .product-info {
+      padding: 80px 0;
+      .company {
+        color: map-get($map: $primary-color, $key: orange);
+      }
+      .product-title {
+        font-weight: 700;
+        font-size: 36px;
+        margin: 36px 0;
+      }
+      .description {
+        color: map-get($map: $neutral-color, $key: grayish-blue);
+        margin: 20px 0;
+      }
+    }
+    .price {
+      margin: 30px 0;
+      .current-price {
+        font-weight: 700;
+        font-size: 1.2rem;
+        margin-right: 10px;
+      }
+      .discount {
+        background-color: map-get($map: $primary-color, $key: pale-orange);
+        color: map-get($map: $primary-color, $key: orange);
+        font-weight: 700;
+        padding: 2px;
+      }
+      .original-price {
+        display: block;
+        color: map-get($map: $neutral-color, $key: grayish-blue);
+        text-decoration: line-through;
+        margin: 10px 0;
+      }
+    }
+    .add-to-cart {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      .number {
+        background-color: map-get($map: $neutral-color, $key: light-grayish-blue);
+        width: 40%;
+        padding: 15px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .number-of-product {
+          display: inline-block;
+          padding-top: 5px;
+        }
+        .remove {
+          padding-bottom: 5px;
+        }
+      }
+      .btn-add-to-cart {
+        background-color: map-get($map: $primary-color, $key: orange);
+        color: white;
+        padding: 15px;
+        border-radius: 10px;
+        width: 55%;
+        img {
+          width: 1rem;
+        }
+      }
     }
   }
 }
