@@ -1,16 +1,19 @@
 const Cart = () => {
   return (
     <div className="cart-content">
-      <h5>Cart</h5>
+      <h3>Cart</h3>
       <hr />
-      <img src="./images/" alt="" className="thumbnail" />
-      <span className="product-info">
-        <p className="produc-title">Fall Edition Sneakers</p>
-        <p className="price">$125.00 x 3 $375.00</p>
-      </span>
-      <button className="delete-from-cart">
-        <img src="./images/icon-delete.svg" alt="Del"/>
-      </button>
+      <div className="product">
+        <img src="./images/image-product-1-thumbnail.jpg" alt="" className="thumbnail" />
+        <div className="product-info">
+          <p className="product-title">Fall Limited Edition Sneakers</p>
+          <p className="price">$125.00 x 3 <span className='total'>$375.00</span></p>
+        </div>
+        <button className="delete-from-cart">
+          <img src="./images/icon-delete.svg" alt="Del"/>
+        </button>
+      </div>
+      {/* <p className="cart-empty">Your cart is empty.</p> */}
       <button className="checkout">Checkout</button>
     </div>
   )

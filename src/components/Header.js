@@ -1,5 +1,8 @@
+import { useState } from 'react'
+import Cart from './Cart'
 
 const Header = () => {
+  const [cartOpen, toggleCart] = useState(false)
   return (
     <header>
       <span className="logo"><img src="./images/logo.svg" alt="sneakers"/></span>
@@ -13,8 +16,11 @@ const Header = () => {
         </ul>
       </nav>
       <div className="user">
-        <button className="btn-cart"><img src="./images/icon-cart.svg" alt="cart" /></button>
+        <button className="btn-cart" onClick={() => toggleCart(!cartOpen)}>
+          <img src="./images/icon-cart.svg" alt="cart" />
+        </button><span className="cart-status">3</span>
         <img className="avatar" src="./images/image-avatar.png" alt="avatar" />
+        { cartOpen && <Cart />}
       </div>
       <hr />
     </header>

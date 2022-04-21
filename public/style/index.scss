@@ -39,7 +39,7 @@ body {
           display: inline;
           .nav-link {
             display: inline-block;
-            color: map-get($map: $neutral-color, $key: grayish-blue);
+            color: map-get($map: $neutral-color, $key: dark-grayish-blue);
             text-decoration: none;
             margin: 0 2%;
             padding: 5px 0;
@@ -55,6 +55,18 @@ body {
         margin-top: 15px;
         margin-left: 50%;
       }
+      .cart-status {
+        position: relative;
+        top: -15px;
+        left: -5px;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: map-get($map: $primary-color, $key: orange);
+        color: white;
+        text-align: center;
+      }
       .avatar {
         float: right;
         width: 45px;
@@ -64,6 +76,62 @@ body {
       margin-top: 50px;
       margin-bottom: 40px;
       grid-column: 1/4;
+    }
+    .cart-content {
+      position: absolute;
+      right: 5%;
+      z-index: 1;
+      margin-top: 30px;
+      width: 360px;
+      min-height: 260px;
+      padding: 25px;
+      box-shadow: 0 20px 20px map-get($map: $neutral-color, $key: grayish-blue);
+      border-radius: 15px;
+      background-color: white;
+      h3 {
+        margin: 25px 0;
+        font-weight: 700;
+      }
+      hr {
+        margin: 0;
+      }
+      .product {
+        margin: 25px 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .thumbnail {
+          width: 50px;
+        }
+        .product-info {
+          .product-title {
+            color: map-get($map: $neutral-color, $key: dark-grayish-blue);
+            margin: 5px 0;
+          }
+          .price {
+            color: map-get($map: $neutral-color, $key: dark-grayish-blue);
+            .total {
+              color: black;
+              font-weight: 700;
+            }
+          }
+        }
+        .delete-from-cart {
+          justify-self: end;
+        }
+      }
+      .cart-empty {
+        color: map-get($map: $neutral-color, $key: dark-grayish-blue);
+        text-align: center;
+        padding: 60px 0;
+      }
+      .checkout {
+        background-color: map-get($map: $primary-color, $key: orange);
+        color: white;
+        padding: 15px;
+        border-radius: 10px;
+        width: 100%;
+      }
     }
   }
   main {
@@ -108,7 +176,7 @@ body {
         margin: 36px 0;
       }
       .description {
-        color: map-get($map: $neutral-color, $key: grayish-blue);
+        color: map-get($map: $neutral-color, $key: dark-grayish-blue);
         margin: 20px 0;
       }
     }
@@ -127,7 +195,7 @@ body {
       }
       .original-price {
         display: block;
-        color: map-get($map: $neutral-color, $key: grayish-blue);
+        color: map-get($map: $neutral-color, $key: dark-grayish-blue);
         text-decoration: line-through;
         margin: 10px 0;
       }
@@ -158,6 +226,7 @@ body {
         padding: 15px;
         border-radius: 10px;
         width: 55%;
+        box-shadow: 0 30px 20px map-get($map: $primary-color, $key: pale-orange);
         img {
           width: 1rem;
         }
