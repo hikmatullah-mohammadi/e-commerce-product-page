@@ -1,4 +1,5 @@
 import Images from './Images'
+import Lightbox from './Lightbox'
 import ProductInfo from './ProductInfo'
 
 const Main = () => {
@@ -6,6 +7,7 @@ const Main = () => {
     <main>
       <Images />
       <ProductInfo />
+      <Lightbox />
     </main>
   )
 }
