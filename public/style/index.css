@@ -42,6 +42,8 @@ body header nav ul li .nav-link {
   text-decoration: none;
   margin: 0 2%;
   padding: 5px 0;
+  -webkit-box-shadow: 0 43px white, 0 50px 0 -2px #ff7d1a;
+          box-shadow: 0 43px white, 0 50px 0 -2px #ff7d1a;
 }
 
 body header .user {
@@ -339,14 +341,11 @@ body main .lightbox-bg {
   position: fixed;
   inset: 0;
   z-index: 2;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-column: 1/3;
   background-color: rgba(0, 0, 0, 0.75);
 }
 
 body main .lightbox-bg .lightbox {
-  width: 400px;
+  width: 550px;
   margin: 0 auto;
   margin-top: 90px;
   text-align: right;
@@ -370,6 +369,26 @@ body main .lightbox-bg .lightbox .images .thumbnails {
       justify-content: space-around;
 }
 
+@media (max-width: 1400px) {
+  body header {
+    padding-top: 30px;
+  }
+  body header nav ul li .nav-link {
+    -webkit-box-shadow: 0 25px white, 0 30px 0 -2px #ff7d1a;
+            box-shadow: 0 25px white, 0 30px 0 -2px #ff7d1a;
+  }
+  body header hr {
+    margin-top: 20px;
+  }
+  body main {
+    margin-top: 150px;
+  }
+  body main .lightbox-bg .lightbox {
+    margin-top: 50px;
+    width: 400px;
+  }
+}
+
 @media (max-width: 1024px) {
   body main {
     margin-left: 5%;
@@ -380,6 +399,10 @@ body main .lightbox-bg .lightbox .images .thumbnails {
   }
   body main .product-info .company {
     margin-top: 50px;
+  }
+  body main .lightbox-bg .lightbox {
+    width: 350px;
+    margin-top: 70px;
   }
 }
 
@@ -396,6 +419,10 @@ body main .lightbox-bg .lightbox .images .thumbnails {
     -ms-grid-column: 1;
     -ms-grid-column-span: 2;
     grid-area: 2/1/3/3;
+  }
+  body header nav ul li .nav-link {
+    -webkit-box-shadow: 0 17px white, 0 22px 0 -2px #ff7d1a;
+            box-shadow: 0 17px white, 0 22px 0 -2px #ff7d1a;
   }
   body header hr {
     margin: 20px;
@@ -431,7 +458,15 @@ body main .lightbox-bg .lightbox .images .thumbnails {
   }
   body header nav ul li {
     display: block;
+  }
+  body header nav ul li .nav-link {
     padding-left: 20px;
+    width: 100%;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  body header nav ul li .nav-link:hover {
+    color: #ff7d1a;
   }
   body header .user .btn-cart {
     margin-right: 0;
@@ -472,6 +507,9 @@ body main .lightbox-bg .lightbox .images .thumbnails {
   }
   body main .product-info * {
     margin: 0.5em 0;
+  }
+  body main .product-info .company {
+    margin-top: 0;
   }
   body main .product-info .product-title {
     margin: 10px 0;
