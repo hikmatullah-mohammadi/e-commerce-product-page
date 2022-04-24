@@ -161,7 +161,7 @@ body header .cart-content div:first-child .checkout {
   margin: 20px 0;
 }
 
-body main {
+body main .products {
   margin: 250px 10% 0 10%;
   display: -ms-grid;
   display: grid;
@@ -170,13 +170,13 @@ body main {
   grid-column-gap: 10%;
 }
 
-body main .images {
+body main .products .images {
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1/2;
 }
 
-body main .images .display {
+body main .products .images .display {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -190,16 +190,16 @@ body main .images .display {
   margin-bottom: 32px;
 }
 
-body main .images .display .prev, body main .images .display .next, body main .images .display .next {
+body main .products .images .display .prev, body main .products .images .display .next, body main .products .images .display .next {
   display: none;
 }
 
-body main .images .display .display-img {
+body main .products .images .display .display-img {
   width: 100%;
   border-radius: 15px;
 }
 
-body main .images .display .prev, body main .images .display .next {
+body main .products .images .display .prev, body main .products .images .display .next {
   height: 50px;
   width: 50px;
   background-color: white;
@@ -208,12 +208,12 @@ body main .images .display .prev, body main .images .display .next {
   z-index: 1;
 }
 
-body main .images .display .next {
+body main .products .images .display .next {
   margin-right: 0;
   margin-left: -50px;
 }
 
-body main .images .thumbnails {
+body main .products .images .thumbnails {
   list-style-type: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -227,63 +227,63 @@ body main .images .thumbnails {
           justify-content: space-between;
 }
 
-body main .images .thumbnails li {
+body main .products .images .thumbnails li {
   width: 22%;
 }
 
-body main .images .thumbnails li img {
+body main .products .images .thumbnails li img {
   width: 100%;
   border-radius: 10px;
 }
 
-body main .images .thumbnails li img:hover {
+body main .products .images .thumbnails li img:hover {
   opacity: 0.5;
 }
 
-body main .product-info {
+body main .products .product-info {
   place-self: center;
 }
 
-body main .product-info .company {
+body main .products .product-info .type {
   color: #ff7d1a;
 }
 
-body main .product-info .product-title {
+body main .products .product-info .product-title {
   font-weight: 700;
   font-size: 36px;
   margin: 36px 0;
 }
 
-body main .product-info .description {
+body main .products .product-info .description {
   color: #68707d;
   margin: 20px 0;
 }
 
-body main .price {
+body main .products .price {
   margin: 30px 0;
 }
 
-body main .price .current-price {
+body main .products .price .current-price {
   font-weight: 700;
   font-size: 1.2rem;
   margin-right: 10px;
 }
 
-body main .price .discount {
+body main .products .price .discount {
   background-color: #ffede0;
   color: #ff7d1a;
   font-weight: 700;
   padding: 2px;
 }
 
-body main .price .original-price {
+body main .products .price .original-price {
   display: block;
   color: #68707d;
   text-decoration: line-through;
   margin: 10px 0;
 }
 
-body main .add-to-cart {
+body main .products .add-to-cart {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -296,7 +296,7 @@ body main .add-to-cart {
           justify-content: space-between;
 }
 
-body main .add-to-cart .number {
+body main .products .add-to-cart .number {
   background-color: #f7f8fd;
   width: 30%;
   padding: 15px;
@@ -313,16 +313,16 @@ body main .add-to-cart .number {
           justify-content: space-between;
 }
 
-body main .add-to-cart .number .number-of-product {
+body main .products .add-to-cart .number .number-of-product {
   display: inline-block;
   padding-top: 5px;
 }
 
-body main .add-to-cart .number .remove {
+body main .products .add-to-cart .number .remove {
   padding-bottom: 5px;
 }
 
-body main .add-to-cart .btn-add-to-cart {
+body main .products .add-to-cart .btn-add-to-cart {
   background-color: #ff7d1a;
   color: white;
   padding: 15px;
@@ -332,11 +332,11 @@ body main .add-to-cart .btn-add-to-cart {
           box-shadow: 0 30px 20px #ffede0;
 }
 
-body main .add-to-cart .btn-add-to-cart img {
+body main .products .add-to-cart .btn-add-to-cart img {
   width: 1rem;
 }
 
-body main .lightbox-bg {
+body main .products .lightbox-bg {
   display: none;
   position: fixed;
   inset: 0;
@@ -344,27 +344,27 @@ body main .lightbox-bg {
   background-color: rgba(0, 0, 0, 0.75);
 }
 
-body main .lightbox-bg .lightbox {
+body main .products .lightbox-bg .lightbox {
   width: 550px;
   margin: 0 auto;
   margin-top: 90px;
   text-align: right;
 }
 
-body main .lightbox-bg .lightbox .close {
+body main .products .lightbox-bg .lightbox .close {
   color: white;
   font-size: 40px;
 }
 
-body main .lightbox-bg .lightbox .close:hover {
+body main .products .lightbox-bg .lightbox .close:hover {
   color: #ff7d1a;
 }
 
-body main .lightbox-bg .lightbox .images .display .prev, body main .lightbox-bg .lightbox .images .display .next, body main .lightbox-bg .lightbox .images .display .next {
+body main .products .lightbox-bg .lightbox .images .display .prev, body main .products .lightbox-bg .lightbox .images .display .next, body main .products .lightbox-bg .lightbox .images .display .next {
   display: inline;
 }
 
-body main .lightbox-bg .lightbox .images .thumbnails {
+body main .products .lightbox-bg .lightbox .images .thumbnails {
   -ms-flex-pack: distribute;
       justify-content: space-around;
 }
@@ -380,27 +380,27 @@ body main .lightbox-bg .lightbox .images .thumbnails {
   body header hr {
     margin-top: 20px;
   }
-  body main {
+  body main .products {
     margin-top: 150px;
   }
-  body main .lightbox-bg .lightbox {
+  body main .products .lightbox-bg .lightbox {
     margin-top: 50px;
     width: 400px;
   }
 }
 
 @media (max-width: 1024px) {
-  body main {
+  body main .products {
     margin-left: 5%;
     margin-right: 5%;
     -ms-grid-columns: 48% 48%;
         grid-template-columns: 48% 48%;
     grid-column-gap: 2%;
   }
-  body main .product-info .company {
+  body main .products .product-info .type {
     margin-top: 50px;
   }
-  body main .lightbox-bg .lightbox {
+  body main .products .lightbox-bg .lightbox {
     width: 350px;
     margin-top: 70px;
   }
@@ -428,7 +428,7 @@ body main .lightbox-bg .lightbox .images .thumbnails {
     margin: 20px;
     margin-bottom: 0;
   }
-  body main {
+  body main .products {
     margin: 150px 15% 0 15%;
     -ms-grid-columns: 100%;
         grid-template-columns: 100%;
@@ -486,52 +486,52 @@ body main .lightbox-bg .lightbox .images .thumbnails {
     position: static;
     margin: 0 auto;
   }
-  body main {
+  body main .products {
     margin: 0;
     margin-top: 80px;
     -ms-grid-columns: 100%;
         grid-template-columns: 100%;
   }
-  body main .images .display .prev, body main .images .display .next {
+  body main .products .images .display .prev, body main .products .images .display .next {
     display: inline;
   }
-  body main .images .display .display-img {
+  body main .products .images .display .display-img {
     border-radius: 0;
   }
-  body main .images .thumbnails {
+  body main .products .images .thumbnails {
     display: none;
   }
-  body main .product-info {
+  body main .products .product-info {
     margin: 0 10%;
     padding: 0;
   }
-  body main .product-info * {
+  body main .products .product-info * {
     margin: 0.5em 0;
   }
-  body main .product-info .company {
+  body main .products .product-info .type {
     margin-top: 0;
   }
-  body main .product-info .product-title {
+  body main .products .product-info .product-title {
     margin: 10px 0;
   }
-  body main .product-info .price {
+  body main .products .product-info .price {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 30% 20% 50%;
         grid-template-columns: 30% 20% 50%;
     place-items: end;
   }
-  body main .product-info .add-to-cart {
+  body main .products .product-info .add-to-cart {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  body main .product-info .add-to-cart .number, body main .product-info .add-to-cart .btn-add-to-cart {
+  body main .products .product-info .add-to-cart .number, body main .products .product-info .add-to-cart .btn-add-to-cart {
     width: 100%;
     padding: 15px;
   }
-  body main .product-info .add-to-cart .number *, body main .product-info .add-to-cart .btn-add-to-cart * {
+  body main .products .product-info .add-to-cart .number *, body main .products .product-info .add-to-cart .btn-add-to-cart * {
     margin: 0;
   }
 }

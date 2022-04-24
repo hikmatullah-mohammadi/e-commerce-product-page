@@ -1,16 +1,13 @@
-const ProductInfo = () => {
+const ProductInfo = props => {
   return (
     <div className="product-info">
-        <h2 className="company">SNEAKER COMPANY</h2>
-        <h1 className="product-title">Fall Limited Edition Sneakers</h1>
-        <p className="description">
-          These low-profile sneakers are your perfect casual wear companion.
-          Featuring a durable rubber outer sole, they'll withstand everything the weahter can offer.
-        </p>
+        <h2 className="type">{ props.product.type }</h2>
+        <h1 className="product-title">{ props.product.title }</h1>
+        <p className="description">{ props.product.description }</p>
         <div className='price'>
-          <span className="current-price">$125.00 </span>
-          <span className="discount">50% </span>
-          <span className="original-price">$250.00 </span>
+          <span className="current-price">${props.product.price.current} </span>
+          <span className="discount">{props.product.price.discount} </span>
+          <span className="original-price">${props.product.price.original} </span>
         </div>
         <div className="add-to-cart">
           <div className="number">
@@ -19,7 +16,7 @@ const ProductInfo = () => {
             <button className="add"><img src="./images/icon-plus.svg" alt="+"/></button>
           </div>
           <button className="btn-add-to-cart">
-            <img src="./images/icon-cart.svg" alt=""/> Add to cart 
+            <img src="./images/icon-cart.svg" alt=""/>{" "}Add to cart 
           </button>
         </div>
       </div>

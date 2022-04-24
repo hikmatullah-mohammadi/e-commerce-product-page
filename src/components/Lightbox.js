@@ -1,13 +1,13 @@
 import Images from "./Images"
 
-const Lightbox = () => {
+const Lightbox = props => {
   return (
     <div className="lightbox-bg">
       <div className="lightbox">
         <button className="close">
           &times;
         </button>
-        <Images />
+        <Images images={props.images}/>
       </div>
     </div>
   )

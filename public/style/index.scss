@@ -150,148 +150,150 @@ body {
     }
   }
   main {
-    margin: 250px 10% 0 10%;
-    display: grid;
-    grid-template-columns: 40% 40%;
-    grid-column-gap: 10%;
-    .images {
-      grid-column: 1/2;
-      .display {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin-bottom: 32px;
-        .prev, .next {
-          display: none;
-        }
-        .display-img {
-          width: 100%;
-          border-radius: 15px;
-        }
-        .prev {
-          height: 50px;
-          width: 50px;
-          background-color: white;
-          border-radius: 50%;
-          margin-right: -50px;
-          z-index: 1;
-        }
-        .next {
-          @extend .prev;
-          margin-right: 0;
-          margin-left: -50px;
-        }
-      }
-      .thumbnails {
-        list-style-type: none;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        li {
-          width: 22%;
-          img {
+    .products {
+      margin: 250px 10% 0 10%;
+      display: grid;
+      grid-template-columns: 40% 40%;
+      grid-column-gap: 10%;
+      .images {
+        grid-column: 1/2;
+        .display {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          margin-bottom: 32px;
+          .prev, .next {
+            display: none;
+          }
+          .display-img {
             width: 100%;
-            border-radius: 10px;
-            &:hover {
-              opacity: 0.5;
+            border-radius: 15px;
+          }
+          .prev {
+            height: 50px;
+            width: 50px;
+            background-color: white;
+            border-radius: 50%;
+            margin-right: -50px;
+            z-index: 1;
+          }
+          .next {
+            @extend .prev;
+            margin-right: 0;
+            margin-left: -50px;
+          }
+        }
+        .thumbnails {
+          list-style-type: none;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          li {
+            width: 22%;
+            img {
+              width: 100%;
+              border-radius: 10px;
+              &:hover {
+                opacity: 0.5;
+              }
             }
           }
         }
       }
-    }
-    .product-info {
-      place-self: center;
-      .company {
-        color: map-get($map: $primary-color, $key: orange);
+      .product-info {
+        place-self: center;
+        .type {
+          color: map-get($map: $primary-color, $key: orange);
+        }
+        .product-title {
+          font-weight: 700;
+          font-size: 36px;
+          margin: 36px 0;
+        }
+        .description {
+          color: map-get($map: $neutral-color, $key: dark-grayish-blue);
+          margin: 20px 0;
+        }
       }
-      .product-title {
-        font-weight: 700;
-        font-size: 36px;
-        margin: 36px 0;
+      .price {
+        margin: 30px 0;
+        .current-price {
+          font-weight: 700;
+          font-size: 1.2rem;
+          margin-right: 10px;
+        }
+        .discount {
+          background-color: map-get($map: $primary-color, $key: pale-orange);
+          color: map-get($map: $primary-color, $key: orange);
+          font-weight: 700;
+          padding: 2px;
+        }
+        .original-price {
+          display: block;
+          color: map-get($map: $neutral-color, $key: dark-grayish-blue);
+          text-decoration: line-through;
+          margin: 10px 0;
+        }
       }
-      .description {
-        color: map-get($map: $neutral-color, $key: dark-grayish-blue);
-        margin: 20px 0;
-      }
-    }
-    .price {
-      margin: 30px 0;
-      .current-price {
-        font-weight: 700;
-        font-size: 1.2rem;
-        margin-right: 10px;
-      }
-      .discount {
-        background-color: map-get($map: $primary-color, $key: pale-orange);
-        color: map-get($map: $primary-color, $key: orange);
-        font-weight: 700;
-        padding: 2px;
-      }
-      .original-price {
-        display: block;
-        color: map-get($map: $neutral-color, $key: dark-grayish-blue);
-        text-decoration: line-through;
-        margin: 10px 0;
-      }
-    }
-    .add-to-cart {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      .number {
-        background-color: map-get($map: $neutral-color, $key: light-grayish-blue);
-        width: 30%;
-        padding: 15px;
-        border-radius: 10px;
+      .add-to-cart {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        .number-of-product {
-          display: inline-block;
-          padding-top: 5px;
-        }
-        .remove {
-          padding-bottom: 5px;
-        }
-      }
-      .btn-add-to-cart {
-        background-color: map-get($map: $primary-color, $key: orange);
-        color: white;
-        padding: 15px;
-        border-radius: 10px;
-        width: 68%;
-        box-shadow: 0 30px 20px map-get($map: $primary-color, $key: pale-orange);
-        img {
-          width: 1rem;
-        }
-      }
-    }
-    .lightbox-bg {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 2;
-      background-color: map-get($map: $neutral-color, $key: transparent-black);
-      .lightbox {
-        width: 550px;
-        margin: 0 auto;
-        margin-top: 90px;
-        text-align: right;
-        .close {
-          color: white;
-          font-size: 40px;
-          &:hover {
-            color: map-get($map: $primary-color, $key: orange);
+        .number {
+          background-color: map-get($map: $neutral-color, $key: light-grayish-blue);
+          width: 30%;
+          padding: 15px;
+          border-radius: 10px;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          .number-of-product {
+            display: inline-block;
+            padding-top: 5px;
+          }
+          .remove {
+            padding-bottom: 5px;
           }
         }
-        .images {
-          .display {
-            .prev, .next {
-              display: inline;
+        .btn-add-to-cart {
+          background-color: map-get($map: $primary-color, $key: orange);
+          color: white;
+          padding: 15px;
+          border-radius: 10px;
+          width: 68%;
+          box-shadow: 0 30px 20px map-get($map: $primary-color, $key: pale-orange);
+          img {
+            width: 1rem;
+          }
+        }
+      }
+      .lightbox-bg {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 2;
+        background-color: map-get($map: $neutral-color, $key: transparent-black);
+        .lightbox {
+          width: 550px;
+          margin: 0 auto;
+          margin-top: 90px;
+          text-align: right;
+          .close {
+            color: white;
+            font-size: 40px;
+            &:hover {
+              color: map-get($map: $primary-color, $key: orange);
             }
           }
-          .thumbnails {
-            justify-content: space-around;
+          .images {
+            .display {
+              .prev, .next {
+                display: inline;
+              }
+            }
+            .thumbnails {
+              justify-content: space-around;
+            }
           }
         }
       }
@@ -313,7 +315,7 @@ body {
         margin-top: 20px;
       }
     }
-    main {
+    main .products {
       margin-top: 150px;
       .lightbox-bg {
         .lightbox {
@@ -327,13 +329,13 @@ body {
 
 @media (max-width: 1024px) {
   body {
-    main {
+    main .products {
       margin-left: 5%;
       margin-right: 5%;
       grid-template-columns: 48% 48%;
       grid-column-gap: 2%;
       .product-info {
-        .company {
+        .type {
           margin-top: 50px;
         }
       }
@@ -367,7 +369,7 @@ body {
         margin-bottom: 0;
       }
     }
-    main {
+    main .products {
       margin: 150px 15% 0 15%;
       grid-template-columns: 100%;
     }
@@ -425,7 +427,7 @@ body {
         }
       }
     }
-    main {
+    main .products {
       margin: 0;
       margin-top: 80px;
       grid-template-columns: 100%;
@@ -448,7 +450,7 @@ body {
         * {
           margin: 0.5em 0;
         }
-        .company {
+        .type {
           margin-top: 0;
         }
         .product-title {
