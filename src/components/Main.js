@@ -10,19 +10,24 @@ const Main = () => {
   useEffect(() => {
     dispatch(fetchProducts())
   }, [dispatch])
-
-  const products = useSelector(state => state.products)
-  const items = products.map(item => (
+  
+  const { isLightBoxOpen, lightboxId } = useSelector(state => state.productsReducer.navigation)
+  
+  const products = useSelector(state => state.productsReducer.products)
+  const elements = products.map(item => (
     <div className="products" key={item.id}>
-      <Images images={item.images}/>
+      <Images images={item.images} productId={item.id} />
       <ProductInfo product={item}/>
-      <Lightbox images={item.images}/>
+      {
+        isLightBoxOpen && lightboxId === item.id && window.outerWidth > 768 && 
+        <Lightbox images={item.images} productId={item.id} />
+      }
     </div>
   ))
   
   return (
     <main>
-      { items }
+      { elements }
     </main>
   )
 }

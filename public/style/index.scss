@@ -17,14 +17,25 @@ $neutral-color : (
   padding: 0;
   box-sizing: border-box;
   font-size: 16px;
+  button {
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+  }
+  .selected {
+    opacity: 0.5;
+  }
+  .nav-active {
+    box-shadow:
+      0 43px white,
+      0 50px 0 -2px map-get($map: $primary-color, $key: orange) 
+    ;
+  }
 }
 
-button {
-  border: none;
-  background-color: inherit;
-}
-.selected {
-  opacity: 0.5;
+
+@mixin nav-hover {
+  @extend .nav-active;
 }
 
 body {
@@ -50,10 +61,9 @@ body {
             text-decoration: none;
             margin: 0 2%;
             padding: 5px 0;
-            box-shadow:
-              0 43px white,
-              0 50px 0 -2px map-get($map: $primary-color, $key: orange) 
-            ;
+            &:hover {
+              @include nav-hover();
+            }
           }
         }
       }
@@ -68,6 +78,7 @@ body {
         margin-right: 15px;
       }
       .cart-status {
+        cursor: pointer;
         position: relative;
         top: -15px;
         left: -25px;
@@ -89,6 +100,7 @@ body {
       grid-column: 1/4;
     }
     .cart-content div:first-child {
+      overflow: auto;
       text-align: left;
       position: absolute;
       right: 5%;
@@ -96,10 +108,12 @@ body {
       z-index: 2;
       width: 360px;
       min-height: 255px;
+      max-height: 50vh;
       padding: 25px;
       box-shadow: 0 20px 20px map-get($map: $neutral-color, $key: grayish-blue);
       border-radius: 15px;
       background-color: white;
+      animation: opacity-anim 250ms linear;
       h3 {
         margin: 20px 0 30px 0;
         font-weight: 700;
@@ -242,17 +256,22 @@ body {
         .number {
           background-color: map-get($map: $neutral-color, $key: light-grayish-blue);
           width: 30%;
-          padding: 15px;
           border-radius: 10px;
           display: flex;
           flex-direction: row;
           justify-content: space-between;
+          overflow: hidden;
           .number-of-product {
             display: inline-block;
-            padding-top: 5px;
+            padding-top: 15px;
+            font-weight: 700;
           }
           .remove {
-            padding-bottom: 5px;
+            padding: 15px;
+            padding-bottom: 20px;
+          }
+          .add {
+            padding: 15px;
           }
         }
         .btn-add-to-cart {
@@ -268,12 +287,13 @@ body {
         }
       }
       .lightbox-bg {
-        display: none;
         position: fixed;
         inset: 0;
         z-index: 2;
         background-color: map-get($map: $neutral-color, $key: transparent-black);
+        animation: opacity-anim 500ms linear;
         .lightbox {
+          animation: opacity-anim 250ms ease-in-out;
           width: 550px;
           margin: 0 auto;
           margin-top: 90px;
@@ -302,15 +322,14 @@ body {
 }
 
 @media (max-width: 1400px) {
+  .nav-active {
+    box-shadow: 
+      0 25px white,
+      0 30px 0 -2px map-get($map: $primary-color, $key: orange) 
+  }
   body {
     header {
       padding-top: 30px;
-      nav ul li .nav-link {
-        box-shadow: 
-          0 25px white,
-          0 30px 0 -2px map-get($map: $primary-color, $key: orange) 
-        ;
-      }
       hr {
         margin-top: 20px;
       }
@@ -351,6 +370,12 @@ body {
 
 
 @media (max-width: 768px) {
+  .nav-active {
+    box-shadow:
+        0 17px white,
+        0 22px 0 -2px map-get($map: $primary-color, $key: orange) 
+  }
+
   body {
     header {
       padding: 40px 10% 10px 10%;
@@ -358,11 +383,6 @@ body {
       nav {
         display: block;
         grid-area: 2/1/3/3;
-        ul li .nav-link {
-          box-shadow:
-              0 17px white,
-              0 22px 0 -2px map-get($map: $primary-color, $key: orange) 
-        }
       }
       hr {
         margin: 20px;
@@ -377,6 +397,11 @@ body {
 }
 
 @media (max-width: 425px) {
+  .nav-active {
+    padding-bottom: 0;
+    box-shadow: none;
+    color: map-get($map: $primary-color, $key: orange) !important;
+  }
   body {
     header {
       padding: 20px 5%;
@@ -393,13 +418,12 @@ body {
         width: 70%;
         background-color: white;
         z-index: 2;
-        animation: nav-anim 200ms ease-in-out;
+        animation: nav-anim 250ms ease-in-out;
         ul li {
           display: block;
           .nav-link {
             padding-left: 20px;
             width: 100%;
-            box-shadow: none;
             &:hover {
               color: map-get($map: $primary-color, $key: orange);
             }
@@ -465,7 +489,6 @@ body {
           flex-direction: column;
           .number, .btn-add-to-cart {
             width: 100%;
-            padding: 15px;
             * {
               margin: 0;
             }
@@ -479,8 +502,18 @@ body {
 @keyframes nav-anim {
   from {
     width: 0;
+    bottom: 100%;
   }
   to {
     width: 70%;
+    bottom: 0;
+  }
+}
+@keyframes opacity-anim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
