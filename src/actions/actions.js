@@ -1,8 +1,11 @@
 import * as actionTypes from './types'
 import { createAction } from '@reduxjs/toolkit'
+import products from './../productsData'
 
-
-export const fetchProducts = createAction(actionTypes.productsFetched)
+// the products json file should come from an api
+export const fetchProducts = createAction(actionTypes.productsFetched, () =>({
+  payload: { products }
+}))
 
 export const addToCart = createAction(actionTypes.addedToCart, (id, number) => ({
   payload: {id, number}

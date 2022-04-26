@@ -130,6 +130,8 @@ body header .cart-content div:first-child .product {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-animation: opacity-anim 250ms linear;
+          animation: opacity-anim 250ms linear;
 }
 
 body header .cart-content div:first-child .product .thumbnail {
@@ -159,6 +161,8 @@ body header .cart-content div:first-child .cart-empty {
   color: #68707d;
   text-align: center;
   line-height: 100px;
+  -webkit-animation: opacity-anim 250ms linear;
+          animation: opacity-anim 250ms linear;
 }
 
 body header .cart-content div:first-child .checkout {
@@ -206,6 +210,10 @@ body main .products .images .display .prev, body main .products .images .display
 body main .products .images .display .display-img {
   width: 100%;
   border-radius: 15px;
+}
+
+body main .products .images .display .display-img:hover {
+  cursor: pointer;
 }
 
 body main .products .images .display .prev, body main .products .images .display .next {
@@ -387,6 +395,12 @@ body main .products .lightbox-bg .lightbox .images .thumbnails {
       justify-content: space-around;
 }
 
+body main .products .lightbox-bg .lightbox .images .thumbnails .selected, body main .products .lightbox-bg .lightbox .images .thumbnails img:hover {
+  opacity: 1;
+  -webkit-box-shadow: 0 0 10px white;
+          box-shadow: 0 0 10px white;
+}
+
 @media (max-width: 1400px) {
   .nav-active, body header nav ul li .nav-link:hover {
     -webkit-box-shadow: 0 25px white, 0 30px 0 -2px #ff7d1a;
@@ -451,11 +465,13 @@ body main .products .lightbox-bg .lightbox .images .thumbnails {
     -ms-grid-columns: 100%;
         grid-template-columns: 100%;
   }
+  body main .products .images .display .display-img:hover {
+    cursor: unset;
+  }
 }
 
 @media (max-width: 425px) {
   .nav-active, body header nav ul li .nav-link:hover {
-    padding-bottom: 0;
     -webkit-box-shadow: none;
             box-shadow: none;
     color: #ff7d1a !important;
@@ -487,9 +503,6 @@ body main .products .lightbox-bg .lightbox .images .thumbnails {
     padding-left: 20px;
     width: 100%;
   }
-  body header nav ul li .nav-link:hover {
-    color: #ff7d1a;
-  }
   body header .user .btn-cart {
     margin-right: 0;
   }
@@ -519,6 +532,9 @@ body main .products .lightbox-bg .lightbox .images .thumbnails {
   }
   body main .products .images .display .display-img {
     border-radius: 0;
+  }
+  body main .products .images .display .display-img:hover {
+    cursor: pointer;
   }
   body main .products .images .thumbnails {
     display: none;

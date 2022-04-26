@@ -1,17 +1,23 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchProducts } from '../actions/actions'
+import { fetchProducts, toggleLightbox } from '../actions/actions'
 import Images from './Images'
 import Lightbox from './Lightbox'
 import ProductInfo from './ProductInfo'
 
 const Main = () => {
   const dispatch = useDispatch()
+  const { isLightBoxOpen, lightboxId } = useSelector(state => state.productsReducer.navigation)
+  
   useEffect(() => {
     dispatch(fetchProducts())
   }, [dispatch])
   
-  const { isLightBoxOpen, lightboxId } = useSelector(state => state.productsReducer.navigation)
+  window.addEventListener('resize', () => {
+    if (window.outerWidth <= 768 && isLightBoxOpen) {
+      dispatch(toggleLightbox(-1, -1))
+    }
+  })
   
   const products = useSelector(state => state.productsReducer.products)
   const elements = products.map(item => (

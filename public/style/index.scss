@@ -128,6 +128,7 @@ body {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        animation: opacity-anim 250ms linear;
         .thumbnail {
           width: 50px;
         }
@@ -152,6 +153,7 @@ body {
         color: map-get($map: $neutral-color, $key: dark-grayish-blue);
         text-align: center;
         line-height: 100px;
+        animation: opacity-anim 250ms linear;
       }
       .checkout {
         background-color: map-get($map: $primary-color, $key: orange);
@@ -182,6 +184,9 @@ body {
           .display-img {
             width: 100%;
             border-radius: 15px;
+            &:hover {
+              cursor: pointer;
+            }
           }
           .prev {
             height: 50px;
@@ -313,6 +318,10 @@ body {
             }
             .thumbnails {
               justify-content: space-around;
+              .selected, & img:hover {
+                opacity: 1;
+                box-shadow: 0 0 10px white;
+              }
             }
           }
         }
@@ -392,13 +401,15 @@ body {
     main .products {
       margin: 150px 15% 0 15%;
       grid-template-columns: 100%;
+      .images .display .display-img:hover {
+        cursor:unset;
+      }
     }
   }
 }
 
 @media (max-width: 425px) {
   .nav-active {
-    padding-bottom: 0;
     box-shadow: none;
     color: map-get($map: $primary-color, $key: orange) !important;
   }
@@ -424,9 +435,6 @@ body {
           .nav-link {
             padding-left: 20px;
             width: 100%;
-            &:hover {
-              color: map-get($map: $primary-color, $key: orange);
-            }
           }
         }
       }
@@ -462,6 +470,9 @@ body {
           }
           .display-img {
             border-radius: 0;
+            &:hover {
+              cursor: pointer;
+            }
           }
         }
         .thumbnails {

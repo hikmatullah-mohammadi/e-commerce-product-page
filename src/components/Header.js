@@ -1,11 +1,12 @@
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import Cart from './Cart'
 
 const Header = () => {
   const cart = useSelector(state => state.productsReducer.cart)
-  let status = 0;
-  cart.products.forEach(item => { status += item.number })
+  
+  let cartStatus = 0;
+  cart.products.forEach(item => { cartStatus += item.number })
 
   const [cartOpen, toggleCart] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(true)
@@ -42,7 +43,7 @@ const Header = () => {
           <img src="./images/icon-cart.svg" alt="cart" />
         </button>
         <span className="cart-status" onClick={() => toggleCart(!cartOpen)}>
-          { status }
+          { cartStatus }
         </span>
         <img className="avatar" src="./images/image-avatar.png" alt="avatar" />
       </div>

@@ -11,7 +11,7 @@ const Images = props => {
   const thumbnail2 = useRef()
   const thumbnail3 = useRef()
   
-  // set the default thumbnail
+  // set the default thumbnail - selected
   useEffect(() => {
     eval('thumbnail'+defaultImage).current.className = 'selected'
   }, [])

@@ -9,7 +9,7 @@ const ProductInfo = props => {
   const [numberOfProduct, setNumberOfProduct] = useState(props.product.numberInCart)
 
   const handleAddToCart = () => {
-    if (numberOfProduct > 0) {
+    if (numberOfProduct > 0 && isToSave) {
       dispatch(addToCart(props.product.id, numberOfProduct))
       setIsToSave(false)
     }
@@ -27,14 +27,16 @@ const ProductInfo = props => {
       <div className="add-to-cart">
         <div className="number">
           <button className="remove" onClick={() => {
-              if (numberOfProduct > 0) {
+              if (numberOfProduct > 0 ) {
                 setNumberOfProduct(numberOfProduct - 1)
                 setIsToSave(true)
               }
             }}>
             <img src="./images/icon-minus.svg" alt="-"/>
           </button>
-          <span className="number-of-product" style={{color: isToSave && 'red'}}> { isToSave ? numberOfProduct : props.product.numberInCart} </span>
+          <span className="number-of-product" style={{color: isToSave && 'red'}}>
+            { isToSave ? numberOfProduct : props.product.numberInCart}
+          </span>
           <button className="add" onClick={() => {
               setNumberOfProduct(numberOfProduct + 1)
               setIsToSave(true)
