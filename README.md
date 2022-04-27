@@ -30,7 +30,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [E-commerce product page](https://www.github.com/hikmatullah-mohammadi/e-commerce-product-page)
-- Live Site URL: [E-commerce product page](https://hm-e-commerce-product-page.netlify.app")
+- Live Site URL: [E-commerce product page](https://hm-e-commerce-product-page.netlify.app)
 
 ## My process
 

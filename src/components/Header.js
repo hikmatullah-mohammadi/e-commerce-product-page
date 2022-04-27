@@ -1,10 +1,10 @@
-import { useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useState, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import Cart from './Cart'
 
 const Header = () => {
   const cart = useSelector(state => state.productsReducer.cart)
-  
+  const dispatch = useDispatch()
   let cartStatus = 0;
   cart.products.forEach(item => { cartStatus += item.number })
 
@@ -13,11 +13,17 @@ const Header = () => {
   const handleToggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
   }
-  window.addEventListener('resize', () => {
-    if (window.outerWidth > 425) {
-      setIsMenuOpen(true)
+  
+  useEffect(() => {
+    const setMenuOpen = () => {
+      if (window.outerWidth > 425) {
+        setIsMenuOpen(true)
+      }
     }
-  })
+    window.addEventListener('resize', setMenuOpen)
+    // clean up function
+    return () => window.removeEventListener('resize', setMenuOpen)
+  }, [dispatch])
   
   return (
     <header >

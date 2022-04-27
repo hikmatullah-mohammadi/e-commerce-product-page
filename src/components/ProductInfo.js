@@ -28,7 +28,7 @@ const ProductInfo = props => {
         <div className="number">
           <button className="remove" onClick={() => {
               if (numberOfProduct > 0 ) {
-                setNumberOfProduct(numberOfProduct - 1)
+                setNumberOfProduct(state => state - 1)
                 setIsToSave(true)
               }
             }}>
@@ -38,7 +38,10 @@ const ProductInfo = props => {
             { isToSave ? numberOfProduct : props.product.numberInCart}
           </span>
           <button className="add" onClick={() => {
-              setNumberOfProduct(numberOfProduct + 1)
+              if (!isToSave) {
+                setNumberOfProduct(props.product.numberInCart)
+              }
+              setNumberOfProduct(state => state + 1)
               setIsToSave(true)
             }}>
             <img src="./images/icon-plus.svg" alt="+"/>

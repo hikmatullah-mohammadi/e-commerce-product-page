@@ -13,11 +13,16 @@ const Main = () => {
     dispatch(fetchProducts())
   }, [dispatch])
   
-  window.addEventListener('resize', () => {
-    if (window.outerWidth <= 768 && isLightBoxOpen) {
-      dispatch(toggleLightbox(-1, -1))
+  useEffect(() => {
+    const closeLighbox = () => {
+      if (window.outerWidth <= 768 && isLightBoxOpen) {
+        dispatch(toggleLightbox(-1, -1))
+      }
     }
-  })
+    window.addEventListener('resize', closeLighbox)
+    // clean up function
+    return () => window.removeEventListener('resize', closeLighbox)
+  }, [dispatch, isLightBoxOpen])
   
   const products = useSelector(state => state.productsReducer.products)
   const elements = products.map(item => (
